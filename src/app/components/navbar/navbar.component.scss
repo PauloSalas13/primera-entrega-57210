@@ -1,0 +1,22 @@
+.example-container {
+  height: 100vh; /* Altura completa de la ventana */
+}
+
+.mat-toolbar {
+  position: fixed; /* Fija la barra de herramientas en la parte superior */
+  top: 0;
+  z-index: 2; /* Asegura que la barra de herramientas esté sobre el contenido */
+}
+
+.mat-sidenav-content {
+  margin-left: 70px; /* Ajusta el margen izquierdo para evitar solapamientos con el sidenav */
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.button-row {
+  margin-bottom: 20px;
+}
+

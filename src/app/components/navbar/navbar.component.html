@@ -1,0 +1,24 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [opened]="true">
+    <mat-nav-list>
+      <a mat-list-item (click)="handleMenuClick()">Inicio</a>
+      <a mat-list-item (click)="sendDataToParent()">Cursos</a>
+      <a mat-list-item (click)="listCourse()">Cursos Disponibles</a>
+      <a mat-list-item (click)="sendDataToParentAlumnos()">Alumnos</a>
+      <a mat-list-item>Inscripción de Cursos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon (click)="handleMenuClick()">menu</mat-icon>
+      </button>
+      <span>Sistema Integral de Selección de Cursos USACH</span>
+    </mat-toolbar>
+    <div class="main-content">
+      <!-- Aquí va el contenido principal de tu aplicación -->
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
