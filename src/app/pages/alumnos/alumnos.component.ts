@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormatDatePipe } from '../../pipes/format-date.pipe';
+import { FormatDatePipe } from '../../shared/pipes/format-date.pipe';
 
 @Component({
   selector: 'app-alumnos',

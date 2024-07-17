@@ -3,7 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 
 
-let newData  = [
+let cursos  = [
   {
     "id": 1,
     "nombre": "Introducción a la Programación",
@@ -33,7 +33,7 @@ let newData  = [
   }
 ];
 
-let newAlumnos = [
+let alumnos = [
   {
     "rut": "1-9",
     "nombre": "Pedro",
@@ -74,33 +74,32 @@ let newAlumnos = [
 })
 export class NavbarComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
-  @Output() dataChanged = new EventEmitter<{ newData : any[], newAlumnos : any[], destino: string }>(); // Evento de salida con objeto que contiene datos y origen
+  @Output() dataChanged = new EventEmitter<{ cursos : any[], alumnos : any[], destino: string }>(); // Evento de salida con objeto que contiene datos y origen
 
-  destino: string = 'grilla'; // Definir destino como propiedad de la clase
+  destino: string = 'grilla';
 
   toggleCursosList() {
-    this.sidenav.toggle(); // Alternar el sidenav
+    this.sidenav.toggle();
   }
 
   handleMenuClick() {
     this.destino="principal";
-    // Emitir evento para indicar que no se selecciona ningún componente
-    this.dataChanged.emit({ newData: [], newAlumnos: [], destino: this.destino });
+    this.dataChanged.emit({ cursos: [], alumnos: [], destino: this.destino });
   }
 
   sendDataToParent() {
-    this.destino="grilla";
-    this.dataChanged.emit({ newData , newAlumnos, destino: this.destino }); // Emitir el evento con los datos correctos
+    this.destino="cursos";
+    this.dataChanged.emit({ cursos , alumnos, destino: this.destino });
   }
 
   sendDataToParentAlumnos() {
     this.destino="alumnos";
-    this.dataChanged.emit({ newData , newAlumnos, destino: this.destino }); // Emitir el evento con los datos correctos
+    this.dataChanged.emit({ cursos , alumnos, destino: this.destino }); 
   }
 
   listCourse() {
     this.destino="curso-list";
-    this.dataChanged.emit({newData , newAlumnos, destino: this.destino}); // Emitir el evento con los datos correctos
+    this.dataChanged.emit({cursos , alumnos, destino: this.destino}); 
   }
 }
 

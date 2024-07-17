@@ -1,0 +1,19 @@
+.pagina-principal {
+  background-image: url('../../../assets/images/fondo.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.success {
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: 18vh;
+}

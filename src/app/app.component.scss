@@ -1,9 +1,6 @@
-/* app.component.scss */
-
-/* app.component.scss */
 .mat-toolbar {
-  background-color: #2196f3; /* Color azul */
-  color: white; /* Texto en blanco */
+  background-color: #2196f3;
+  color: white;
   width: 100%;
 }
 
@@ -13,27 +10,25 @@
   }
 }
 
-/* app.component.css */
-
 .app-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ajusta la altura al 100% del viewport */
+  height: 100vh;
 }
 
 .main-container {
   display: flex;
-  flex: 1; /* El contenido principal ocupa todo el espacio restante */
+  flex: 1;
 }
 
 .navbar-container {
-  width: 250px; /* Ancho fijo para app-navbar */
-  flex-shrink: 0; /* No se encoge, mantiene el ancho fijo */
-  background-color: #f0f0f0; /* Color de fondo opcional */
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
 }
 
 .content-container {
-  flex: 1; /* El contenido ocupa todo el espacio disponible */
-  padding: 20px; /* Espacio interior para el contenido */
-  overflow-y: auto; /* Barra de desplazamiento vertical si es necesario */
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
 }

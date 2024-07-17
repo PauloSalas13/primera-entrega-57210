@@ -13,9 +13,9 @@ export class AppComponent {
 
   title = 'primera-entrega-angular';
 
-  handleDataChanged(event: { newData: any[], newAlumnos: any[], destino: string }) {
-    this.dataFromNavbar = event.newData;
-    this.dataFromAlumnos = event.newAlumnos;
+  handleDataChanged(event: { cursos: any[], alumnos: any[], destino: string }) {
+    this.dataFromNavbar = event.cursos;
+    this.dataFromAlumnos = event.alumnos;
     this.selectedComponent = event.destino;
   }
   

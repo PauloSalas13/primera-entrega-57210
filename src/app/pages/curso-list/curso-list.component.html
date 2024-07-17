@@ -1,0 +1,8 @@
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+  <ng-container matColumnDef="cursoDisponible">
+    <th mat-header-cell *matHeaderCellDef appHeaderStyle> Cursos Disponibles </th>
+    <td mat-cell *matCellDef="let element"> {{element | cursoDisponible}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

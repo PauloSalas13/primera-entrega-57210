@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormatDatePipe } from '../../pipes/format-date.pipe';
+import { FormatDatePipe } from '../../shared/pipes/format-date.pipe';
 
 @Component({
   selector: 'app-grilla',
@@ -42,7 +42,6 @@ export class GrillaComponent implements OnChanges {
 
   openModal() {
 
-   // Limpiar el formulario
    this.newRowForm.reset();
 
     const maxId = Math.max(...this.data.map(d => d.id), 0);
@@ -61,8 +60,8 @@ export class GrillaComponent implements OnChanges {
       nombre: rowToUpdate.nombre,
       especialidad: rowToUpdate.especialidad,
       profesor: rowToUpdate.profesor,
-      fechaInicio: new Date(rowToUpdate.fechaInicio), // Convertir a objeto Date
-      fechaTermino: new Date(rowToUpdate.fechaTermino), // Convertir a objeto Date
+      fechaInicio: new Date(rowToUpdate.fechaInicio),
+      fechaTermino: new Date(rowToUpdate.fechaTermino),
       vigente: rowToUpdate.vigente
     });
     this.showModal = true;
@@ -78,17 +77,14 @@ export class GrillaComponent implements OnChanges {
 
       const indexToUpdate = this.data.findIndex(d => d.id === formattedRow.id);
       if (indexToUpdate !== -1) {
-
-        // Actualizar fila existente
         const indexToUpdate = this.data.findIndex(d => d.id === formattedRow.id);
         if (indexToUpdate !== -1) {
           this.data[indexToUpdate] = formattedRow;
-          this.data = [...this.data]; // Trigger change detection
+          this.data = [...this.data];
         }
       } else {
-        // Agregar nueva fila (este bloque solo se ejecuta si se agregara una nueva fila)
         this.data.push(formattedRow);
-        this.data = [...this.data]; // Trigger change detection
+        this.data = [...this.data];
       }
   
       this.closeModal();

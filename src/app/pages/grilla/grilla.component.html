@@ -1,5 +1,4 @@
 <table mat-table [dataSource]="data" class="mat-elevation-z8">
-  <!-- Definición de columnas -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> No. </th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
@@ -35,7 +34,6 @@
     <td mat-cell *matCellDef="let element"> {{element.vigente ? 'Sí' : 'No'}} </td>
   </ng-container>
 
-  <!-- Nueva columna de acciones -->
   <ng-container matColumnDef="acciones">
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let element; let i = index">
@@ -48,17 +46,14 @@
     </td>
   </ng-container>
 
-  <!-- Definición de filas -->
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<!-- Botones para modificar columnas -->
 <div class="buttons-container">
   <button mat-raised-button color="primary" (click)="openModal()">Agregar nuevo curso</button>
 </div>
 
-<!-- Modal para agregar fila -->
 <div *ngIf="showModal" class="modal">
   <div class="modal-content">
     <h3>Agregar nuevo curso</h3>

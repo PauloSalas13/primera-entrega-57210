@@ -1,17 +1,12 @@
 <div class="app-container">
   <app-toolbar (toggleNavbarEvent)="toggleNavbar()"></app-toolbar>
 
-  <!-- Contenedor principal con Flexbox -->
   <div class="main-container">
-    <!-- Navbar a la izquierda -->
     <div class="navbar-container">
       <app-navbar (dataChanged)="handleDataChanged($event)"></app-navbar>
     </div>
-
-    <!-- Contenido principal que cambia según la opción seleccionada -->
     <div class="content-container">
-        <!-- Aquí se muestra el componente seleccionado -->
-        <app-grilla *ngIf="selectedComponent === 'grilla'" [data]="dataFromNavbar"></app-grilla>
+        <app-grilla *ngIf="selectedComponent === 'cursos'" [data]="dataFromNavbar"></app-grilla>
         <app-curso-list *ngIf="selectedComponent === 'curso-list'" [data]="dataFromNavbar"></app-curso-list>
         <app-alumnos *ngIf="selectedComponent === 'alumnos'" [data]="dataFromAlumnos"></app-alumnos>
         <app-message *ngIf="selectedComponent === 'principal'" [data]="dataFromNavbar"></app-message>

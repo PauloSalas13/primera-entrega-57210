@@ -7,11 +7,11 @@ import { Component, Input, SimpleChanges, OnInit } from '@angular/core';
 })
 export class CursoListComponent implements OnInit {
   @Input() data: any[] = [];
-  displayedColumns: string[] = ['nombre','especialidad','profesor','fechaInicio','fechaTermino'];
+  displayedColumns: string[] = ['cursoDisponible'];
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
-      console.log('Data received in CursoListComponent:', this.data);
+      console.log('Información recibida de alumnos', this.data);
     }
   }
 
@@ -22,5 +22,4 @@ export class CursoListComponent implements OnInit {
   filterVigentes() {
     this.data = this.data.filter(course => course.vigente);
   }
-
 }
